@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Product list</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+
+    <script src="assets/jquery.min.js"></script>
+
+<style>
+body
+{
+    background:linear-gradient(0deg, #EEE8AA, #F0F8FF);
+	background-attachment:fixed;
+}
+
+.form-control-check{ 
+width: 1.5rem; height: 1.5rem;top:0.5rem;
+}
+
+
+</style>
+
+</head>
+
+<body class="container">
+
+  <br>
+  <hr>
+   <div>
+
+	<nav class="navbar fixed-top navbar-white bg-white">
+        <ul class="container nav nav-tabs nav-fill">
+            <li class="nav-item "><a role="tab" data-toggle="tab" href="#tab-1" class="nav-link active h6"> Add entry</a></li>
+            <li class="nav-item "><a role="tab" data-toggle="tab" href="#tab-2" class="nav-link h6"onclick="nowdatetime();">Modify or Share</a></li>
+        </ul>
+    </nav>
+
+            <!-- tab 1 -->		
+        <div class="tab-content shadow">
+            <div role="tabpanel" class="tab-pane fade show active  bg-white p-3" id="tab-1">
+
+                <form onsubmit="event.preventDefault();" name='prodinput' autocomplete="off">
+
+					<div class="input-group p-2">
+						  <span class="input-group-text" id="sb"><i class="fa fa-search"></i></span>
+						  <input type="text" class="form-control"id="myInput" onkeyup="searchbox()" placeholder="Search for product name.." title="Type in a name" aria-label="Username" aria-describedby="sb">
+					</div>
+
+  
+				<table id="table1" class="table table-hover table-sm table-bordered m-auto ">
+					  <tr class="header">
+							<th>Product details</th>
+							<th>Quantity</th>
+							<th>Add to list</th>
+						</tr>
+							<tr><td>Biscuits | Badam Biscuits | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Biscuits | Badam Biscuits | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Biscuits | Bourn Bites | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Biscuits | Bourn Bites | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Biscuits | Butter Biscuits | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Biscuits | Butter Biscuits | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Butter-Toast | Cheese butter | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Butter-Toast | Mini Jeera Toast | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Butter-Toast | Twist butter | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Chutney | Lasun Chutney | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Chutney | Lasun Chutney | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Dry Fish | Jawla barik | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Dry Fish | Jawla barik | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Dry Fish | Jawla motha | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Dry Fish | Jawla motha | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Dry Fish | Sode | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Chakli Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Dangar Flour | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Ghavane Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Jawari Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Kulid Masala Flour | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Kulid Masala Flour | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Kulid Masala Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Malvani Vade Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Methkut | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Modak Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Nachni Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Raw kulid Flour | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Raw Kulid Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Rice Flour | 500gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Shankarpali Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Flour | Thalipith Flour | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Black paper kaju | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Chulivarcho kaju | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | chulivarcho kaju | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Garam masala kaju | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Green chill kaju | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Koknatio kaju | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | koknatio kaju | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Peri peri kaju | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kaju Special | Shezwaan kaju | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Candy | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Candy | 50 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Candy | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Mava | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Mava | 50 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Avala | Avala Mava | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Coconut | Coconut Oil | 1 lit </td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Coconut | Coconut Oil | 200 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Coconut | Coconut Oil | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Jackfruit | Jackfruit Poli | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Jackfruit | Jackfruit wafers | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Kokam | 1 kg</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Kokam | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Kokam Aagal | 1 lit </td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Kokam Aagal | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Kokam butter | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Kokam | Sweet Kokam | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Mango | Mango Poli | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Mango | Mango Pulp | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Mirchi | Sandgi Mirchi | 50 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Kokan Special - Mirchi | Taak Mirchi | 50 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Barik shev ladoo | 12 pc</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Chakli | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Chivda | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Chivda | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Diet Chivda | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Diet Chivda | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Jada shev ladoo | 12 pc</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Khadkhade ladoo | 12 pc</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Malvani khaja | 200gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Poha ladoo | 12 pc</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | shankarpali | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Shengdana ladoo | 12 pc</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Shev Red | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Malvani Special | Shev Yellow | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Garam masala | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Garam masala | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Garam masala | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Gawathi halad | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Gawathi halad | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Gawathi halad | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Goda masala | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Goda masala | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Goda masala | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Kashmiri Mirchi Powder | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Kashmiri Mirchi Powder | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Kashmiri Mirchi Powder | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani bhajka masala | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani bhajka masala | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani bhajka masala | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani fish masala | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani fish masala | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Malvani fish masala | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Sp. Malvani masala | 250 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Sp. Malvani masala | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Masale | Sp.Malvani masala | 100 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Avala pickel | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Chilli pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Chilli Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Chilli Thecha | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Dryfruit Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Jaayfal skin Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | lemon Chutney | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Lemon Chutney | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Lemon Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Lemon Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Lemon sweet Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Lemon sweet Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Sweet & Spicy Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Sweet & Spicy Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Sweet Pickle | 200 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Pickle | Mango Sweet Pickle | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Rice | Red Poha | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Rice | Ukda Tandul | 1 kg</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Rice | Ukda Tandul | 500 gm</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Amrut Kokam Sarbat | 1 lit </td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Amrut Kokam Sarbat | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Awala sarbat | 1 lit</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Awala sarbat | 500 mI</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Cashew apple | 200 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kairi Panha | 200 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kairi Panha | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kokam Aagal | 1lit</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kokam Aagal | 500 ml </td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | kokam sarbat | 200 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kokam Sarbat | 1 lit </td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Kokam Sarbat | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Lemon Ginger Sarbat | 1 lit</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | Lemon Ginger Sarbat | 500 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+							<tr><td>Sarbat | mango | 200 ml</td>
+							<td> <input type="number" class="form-control form-control-sm" id="pqty" min="0" ></td>
+							<td><input type="checkbox" class="form-control-check" name="check-tab1"></td>
+							</tr>
+					</table>
+<hr>
+            <div class="tab tab-btn">
+			<center>
+                <button onclick="tab1_To_tab2();" class="btn btn-success">Add to list</button>
+			</center>
+            </div>
+			
+				</form>
+			</div>
+							
+
+
+            <!-- tab 2 -->
+            <div role="tabpanel" class="tab-pane fade bg-white p-3" id="tab-2">
+
+                        <div class="card card-body">
+							<h5 class="text-danger"> Customer details </h5>
+                            <form  onsubmit="event.preventDefault();" class="row">
+                                <div class=" p-2 col-md-6"><label> Name : </label>
+                                    <input required class="form-control " type="text" placeholder="Name"
+                                        name="custname" id="custname" pattern="[A-Za-z .]{2,}">
+                                </div>
+                                <div class=" p-2 col-md-6"><label> Contact No. : </label>
+                                    <input required class="form-control " type="number" 
+                                        placeholder="Contact number" name="custcontact" id="custcontact" min="100000" pattern="[0-9]{6,}">
+                                </div>
+                                <div class="col-12 p-2"><label> Address : </label>
+                                    <input class="form-control " type="text"
+                                        placeholder="Location details" name="custadr" id="custadr" >
+                                </div>
+                                <div class="col-12 text-center"><hr>
+                                    <button class="btn btn-primary btn-sm" onclick="setcustdetails(); "> Set Customer details </button>
+                                </div>
+                            </form>
+                        </div>
+						
+							<br><small class='p-2'> If you want to exclude the items, select the checkboxes below and click on 'Remove'.</small>
+
+							<div  id="printcontent">
+							<hr>
+                                <div class="row p-2">
+									 <div class="col-8">
+										<h6>Customer name : <span id="cust_name"> -- </span>  </h6>
+									 </div>	 
+									 <div class="col-4">
+										<small> Date : <span  id="curdate"> </span> </small>
+									 </div>
+									 
+									 <div class="col-8">
+										<small>Address : <span id="cust_adr"></span> </small>
+									 </div>								 
+									 
+									 <div class="col-4">
+										<small>Contact : <span id="cust_contact"> </span>  </small>
+									 </div>
+                                </div>
+
+								<div class="table-responsive  text-capitalize p-2">
+								<div class="float-end p-1"> <button onclick="tab2_To_tab1();" class="btn btn-danger "><i class="fa fa-trash"></i> Remove selected</button> </div>
+									<table id="table2" class="table table-condensed table-hover table-bordered ">
+											<tr>
+												<th>Product details</th>
+												<th>Quantity</th>
+												<th>Remove</th>
+											</tr>
+											<!-- PRODUCTS WILL BE ADDED HERE DYNAMICALLY THROUGH FORM -->
+									</table> 
+								</div>
+							</div>
+								
+								
+								<div class="container">
+									<div class="text-center"> <button onclick="PrintDiv();" class="btn btn-success "> Save as PDF</button> </div>
+									<br><br>
+								</div>
+															<hr>
+							</div>
+
+			 </div>		
+			 <br>
+		</div>
+							
+
+
+
+<script>
+
+
+
+		
+function searchbox() {
+ 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+    ispresent = document.getElementById("checks");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table1");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } 
+	  else {
+	  	           tr[i].style.display = "none";
+      }
+
+    }       
+  }
+}
+
+</script>
+    <script src="assets/bootstrap.min.js"></script>
+	<script src="assets/functions.js"></script>
+   
+</body>
+
+</html>
